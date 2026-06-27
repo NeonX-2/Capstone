@@ -6,13 +6,10 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    public Camera playerCamera;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
     public float jumpPower = 7f;
     public float gravity = 10f;
-    public float lookSpeed = 2f;
-    public float lookXLimit = 45f;
     public float defaultHeight = 2f;
     public float crouchHeight = 1f;
     public float crouchSpeed = 3f;
@@ -80,14 +77,5 @@ public class PlayerController : MonoBehaviour
         }
 
         characterController.Move(moveDirection * Time.deltaTime);
-
-        if (canMove)
-        {
-            Vector2 mouseDelta = mouse.delta.ReadValue();
-            rotationX += -mouseDelta.y * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, mouseDelta.x * lookSpeed, 0);
-        }
     }
 }
