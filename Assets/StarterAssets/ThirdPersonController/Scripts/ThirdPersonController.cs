@@ -135,6 +135,7 @@ namespace StarterAssets
             }
         }
 
+        private Animator animator;
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
@@ -153,6 +154,10 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            {
+                animator = GetComponent<Animator>();
+            }
         }
 
         private void Update()
@@ -162,6 +167,22 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                bool isCurrentlyEquipped = animator.GetBool("IsEquipped");
+                animator.SetBool("IsEquipped", !isCurrentlyEquipped);
+            }
+            
+            // Check for attack input (e.g. Left Mouse Click)
+            if (Input.GetMouseButtonDown(0)) 
+            {
+                // Only allow slashing if sword is equipped
+                if (animator != null && animator.GetBool("IsEquipped"))
+                {
+                    animator.SetTrigger("Attack");
+                }
+            }
         }
 
         private void LateUpdate()
