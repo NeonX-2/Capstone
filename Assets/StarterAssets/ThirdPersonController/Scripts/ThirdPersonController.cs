@@ -104,6 +104,8 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
 #endif
+        private bool _isSneaking;
+
         private Animator _animator;
         private CharacterController _controller;
         private StarterAssetsInputs _input;
