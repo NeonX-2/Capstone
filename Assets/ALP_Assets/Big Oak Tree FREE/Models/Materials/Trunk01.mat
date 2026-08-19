@@ -337,7 +337,7 @@ Material:
     - _SecondUVsMode: 0
     - _SecondUVsScaleMode: 0
     - _Shininess: 0.078125
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessFresnelEnable: 0
     - _SmoothnessFresnelPower: 10
     - _SmoothnessFresnelScale: 1.1
