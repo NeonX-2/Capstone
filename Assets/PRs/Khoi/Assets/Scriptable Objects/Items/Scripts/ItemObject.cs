@@ -16,14 +16,20 @@ public enum Attributes
     Stamina,
     Strength
 }
+
 public abstract class ItemObject : ScriptableObject
 {
     public int Id;
     public Sprite uiDisplay;
     public ItemType type;
+
     [TextArea(15, 20)]
     public string description;
+
     public ItemBuff[] buffs;
+
+    // 👇 NEW: prefab reference for dropping into the world
+    public GameObject worldPrefab;
 
     public Item CreateItem()
     {
@@ -38,10 +44,16 @@ public class Item
     public string Name;
     public int Id;
     public ItemBuff[] buffs;
+
+    // 👇 NEW: keep a reference to the original ItemObject
+    public ItemObject origin;
+
     public Item(ItemObject item)
     {
         Name = item.name;
         Id = item.Id;
+        origin = item; // store ScriptableObject reference
+
         buffs = new ItemBuff[item.buffs.Length];
         for (int i = 0; i < buffs.Length; i++)
         {
@@ -60,12 +72,14 @@ public class ItemBuff
     public int value;
     public int min;
     public int max;
+
     public ItemBuff(int _min, int _max)
     {
         min = _min;
         max = _max;
         GenerateValue();
     }
+
     public void GenerateValue()
     {
         value = UnityEngine.Random.Range(min, max);
