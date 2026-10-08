@@ -32,11 +32,17 @@ public class InventoryController : MonoBehaviour
 
     public void OpenInventory()
     {
-        inventoryScreen.SetActive(true);
+        if (!inventoryScreen.activeSelf)
+        {
+            inventoryScreen.SetActive(true);
+        }
     }
 
     public void CloseInventory()
     {
-        inventoryScreen.SetActive(false);
+        if (inventoryScreen.activeSelf)
+        {
+            inventoryScreen.SetActive(false);
+        }
     }
 }
