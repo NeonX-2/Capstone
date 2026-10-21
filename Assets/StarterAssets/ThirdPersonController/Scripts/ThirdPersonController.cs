@@ -170,7 +170,7 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.C))
             {
                 bool isCurrentlyEquipped = animator.GetBool("IsEquipped");
                 animator.SetBool("IsEquipped", !isCurrentlyEquipped);
