@@ -4,7 +4,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyAI : MonoBehaviour
 {
-    [Header("Target & Ranges")]
+    [Header("Target & Ranges")] 
+    public PlayerStats playerStats;
     public Transform player;
     public float detectionRange = 10f;
     public float attackRange = 2f;
@@ -12,7 +13,8 @@ public class EnemyAI : MonoBehaviour
     [Header("Attack Settings")]
     public float attackCooldown = 1.5f;
     private float lastAttackTime;
-
+    public int damage = 2;
+    
     private NavMeshAgent agent;
     private Animator animator;
 
@@ -90,6 +92,14 @@ public class EnemyAI : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("Attack");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == ("Player"))
+        {
+            playerStats.TakeDamage(damage);
         }
     }
 
