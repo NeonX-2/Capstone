@@ -1556,7 +1556,6 @@ GameObject:
   m_Component:
   - component: {fileID: 155867770}
   - component: {fileID: 155867772}
-  - component: {fileID: 155867771}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -1579,19 +1578,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1158978068}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &155867771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155867769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923e7e603169e114fafeaa485a2cb70b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
 --- !u!212 &155867772
 SpriteRenderer:
   serializedVersion: 2
@@ -6124,7 +6110,6 @@ GameObject:
   m_Component:
   - component: {fileID: 601765392}
   - component: {fileID: 601765394}
-  - component: {fileID: 601765393}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -6147,19 +6132,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 797640281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &601765393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601765391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923e7e603169e114fafeaa485a2cb70b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
 --- !u!212 &601765394
 SpriteRenderer:
   serializedVersion: 2
@@ -9609,7 +9581,6 @@ GameObject:
   m_Component:
   - component: {fileID: 893681339}
   - component: {fileID: 893681341}
-  - component: {fileID: 893681340}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -9632,19 +9603,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1376558534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &893681340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893681338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923e7e603169e114fafeaa485a2cb70b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
 --- !u!212 &893681341
 SpriteRenderer:
   serializedVersion: 2
@@ -16027,7 +15985,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1554360297}
   - component: {fileID: 1554360299}
-  - component: {fileID: 1554360298}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -16050,19 +16007,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1946196151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1554360298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554360296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923e7e603169e114fafeaa485a2cb70b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
 --- !u!212 &1554360299
 SpriteRenderer:
   serializedVersion: 2
@@ -16325,7 +16269,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1589795345}
   - component: {fileID: 1589795347}
-  - component: {fileID: 1589795346}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -16348,19 +16291,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 375766899}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1589795346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589795344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923e7e603169e114fafeaa485a2cb70b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
 --- !u!212 &1589795347
 SpriteRenderer:
   serializedVersion: 2
@@ -16430,7 +16360,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1591770791}
   - component: {fileID: 1591770793}
-  - component: {fileID: 1591770792}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -16453,19 +16382,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 777357541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1591770792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591770790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923e7e603169e114fafeaa485a2cb70b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
 --- !u!212 &1591770793
 SpriteRenderer:
   serializedVersion: 2
@@ -23568,7 +23484,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2117149849}
   - component: {fileID: 2117149851}
-  - component: {fileID: 2117149850}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -23591,19 +23506,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1746286225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2117149850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117149848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923e7e603169e114fafeaa485a2cb70b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
 --- !u!212 &2117149851
 SpriteRenderer:
   serializedVersion: 2
