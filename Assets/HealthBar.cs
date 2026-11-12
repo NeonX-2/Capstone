@@ -1,17 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; 
+
 public class HealthBar : MonoBehaviour
 {
-    public Slider healthSlider;
+    public Slider slider;
+    public TextMeshProUGUI healthText; 
 
-    public void SetSlider(float amount)
+    public void SetMaxHealth(int health)
     {
-        healthSlider.value = amount;
+        slider.maxValue = health;
+        slider.value = health;
+        UpdateText(health, health);
     }
 
-    public void SetSliderMax(float amount)
+    public void SetHealth(int health)
     {
-        healthSlider.maxValue = amount;
-        SetSlider(amount);
+        slider.value = health;
+        UpdateText(health, (int)slider.maxValue);
+    }
+
+    private void UpdateText(int current, int max)
+    {
+        if (healthText != null)
+        {
+            healthText.text = current + " / " + max;
+        }
     }
 }

@@ -11097,6 +11097,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1978317167}
+    - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1978317175}
+    - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1978317174}
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
 --- !u!4 &1022668501 stripped
 Transform:
@@ -17819,8 +17825,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -643, y: 10.208832}
-  m_SizeDelta: {x: 280.09998, y: 433.5}
+  m_AnchoredPosition: {x: -377, y: -3.0183}
+  m_SizeDelta: {x: 280.1, y: 410.9116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737398213
 MonoBehaviour:
@@ -20686,6 +20692,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   inventory: {fileID: 11400000, guid: ba391aef18194db419840aa8245becc2, type: 2}
+--- !u!95 &1978317173 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6982812146204527121, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+  m_PrefabInstance: {fileID: 1014697513}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1978317174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978317166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0b50b35148b024b88dd7fe7b8ff8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  health: 10
+  maxHealth: 10
+  healthBar: {fileID: 0}
+--- !u!114 &1978317175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978317166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd35775efb073bc4698ff91aa4468485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeCombo
+  animator: {fileID: 1978317173}
+  attackTriggerName: Attack
+  attackCountParamName: AttackCount
+  maxComboSteps: 3
+  comboResetTime: 1.2
 --- !u!1001 &1978347399
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Attack Settings")]
     public float attackCooldown = 1.5f;
     private float lastAttackTime;
-    public int damage = 2;
+    public int damage = 1; 
     
     private NavMeshAgent agent;
     private Animator animator;
@@ -23,7 +23,7 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
 
-        // Auto-find player if not assigned in Inspector
+        // Tự động tìm Player nếu chưa gán trong Inspector
         if (player == null)
         {
             GameObject playerObj = GameObject.FindWithTag("Player");
@@ -31,6 +31,12 @@ public class EnemyAI : MonoBehaviour
             {
                 player = playerObj.transform;
             }
+        }
+
+        // Tự động tìm PlayerStats nếu chưa gán
+        if (playerStats == null && player != null)
+        {
+            playerStats = player.GetComponent<PlayerStats>();
         }
     }
 
@@ -40,17 +46,16 @@ public class EnemyAI : MonoBehaviour
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        // 1. Update Animator "Speed" parameter for walk/idle blend
+        // 1. Cập nhật thông số Speed cho Animator chạy animation di chuyển
         if (animator != null)
         {
-            // Uses actual velocity magnitude from NavMeshAgent
             animator.SetFloat("Speed", agent.velocity.magnitude);
         }
 
-        // 2. Detection & Chase Logic
+        // 2. Logic phát hiện và đuổi theo Player
         if (distanceToPlayer <= detectionRange)
         {
-            // Within Attack Range
+            // Trong phạm vi tấn công
             if (distanceToPlayer <= attackRange)
             {
                 agent.isStopped = true;
@@ -62,7 +67,7 @@ public class EnemyAI : MonoBehaviour
                     lastAttackTime = Time.time;
                 }
             }
-            // Chase Player
+            // Đuổi theo Player
             else
             {
                 agent.isStopped = false;
@@ -71,7 +76,6 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            // Stop if player gets out of range
             agent.isStopped = true;
         }
     }
@@ -79,7 +83,7 @@ public class EnemyAI : MonoBehaviour
     void RotateTowardsPlayer()
     {
         Vector3 direction = (player.position - transform.position).normalized;
-        direction.y = 0; // Keep rotation flat on the floor
+        direction.y = 0; // Giữ hướng xoay phẳng trên mặt đất
         if (direction != Vector3.zero)
         {
             Quaternion lookRotation = Quaternion.LookRotation(direction);
@@ -95,15 +99,19 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    // Hàm trừ máu
+    public void TriggerAttackDamage()
     {
-        if (other.gameObject.tag == ("Player"))
+        if (playerStats != null && player != null)
         {
-            playerStats.TakeDamage(damage);
+            if (Vector3.Distance(transform.position, player.position) <= attackRange + 0.5f)
+            {
+                playerStats.TakeDamage(damage);
+            }
         }
     }
 
-    // Visualize detection and attack ranges in Scene view
+    // Hiển thị vòng tròn phạm vi trong cửa sổ Scene
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
