@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadScene("map");
     }
 
     public void QuitGame()
